@@ -34,31 +34,37 @@
 
 <hr />
 
-<h2>🧩 Core Topological Problems Tackled</h2>
+<!-- 
+  ========================================================================
+  REWRITTEN SECTION: CORE OPEN TOPOLOGICAL PROBLEMS WE AIM TO TACKLE
+  ========================================================================
+-->
+
+<hr />
+
+<h2>🧩 Core Topological Hurdles We Aim to Tackle</h2>
 
 <p>
-  Unlike mathematical knots which exist strictly in closed loops, proteins are open polypeptide chains. This repo provides algorithmic approaches to address three major topological hurdles:
+  Unlike mathematical knots which exist strictly in closed loops, proteins are open polypeptide chains. This project is dedicated to building the algorithmic groundwork and computational tools required to confront three massive open hurdles in structural topology:
 </p>
 
 <h3>1. Open Knot Detection & Invariant Calculations</h3>
 <ul>
-  <li><strong>The Issue:</strong> Standard topological invariants (e.g., Alexander or Jones polynomials) fail on open curves because the ends can technically be pulled apart without changing the intrinsic "knotting" state.</li>
-  <li><strong>Our Approach:</strong> We implement stochastic/deterministic closure algorithms and <strong>Knotoid theory</strong> to project open chains onto a 2D plane, generating bounded topological descriptors independent of absolute terminus positions.</li>
+  <li><strong>The Hurdle:</strong> Standard topological invariants (such as Alexander or Jones polynomials) completely break down on open curves. Because the chain ends are free, they can theoretically be pulled apart without changing the intrinsic "knotting" state, making classification unstable.</li>
+  <li><strong>Proposed Roadmap:</strong> We intend to implement stochastic and deterministic closure algorithms alongside <strong>Knotoid theory</strong>. Our goal is to project open chains onto a 2D plane to generate bounded topological descriptors that remain valid regardless of absolute terminus positions.</li>
 </ul>
 
 <h3>2. Kinetic Traps & Self-Entanglement Barriers</h3>
 <ul>
-  <li><strong>The Issue:</strong> During folding simulations, chains frequently collapse prematurely, forming local "false knots" or kinetic traps that dramatically increase the timescale of successful folding.</li>
-  <li><strong>Our Approach:</strong> Energy-landscape smoothing mechanisms coupled with biased molecular dynamics (MD) to trace the exact threading mechanisms (e.g., slipknotting vs. direct end-threading).</li>
+  <li><strong>The Hurdle:</strong> In predictive folding simulations, polypeptide chains frequently collapse into messy local architectures. They form "false knots" or severe kinetic traps that artificial intelligence and standard physics models cannot resolve, artificially inflating the timescale of successful folding.</li>
+  <li><strong>Proposed Roadmap:</strong> We want to develop energy-landscape smoothing mechanisms coupled with biased molecular dynamics (MD) code. This will allow us to map and trace the exact, sequential threading mechanisms (such as slipknotting versus direct end-threading) needed to bypass these traps.</li>
 </ul>
 
 <h3>3. Mechanical Resistance in Unfolding Pathways</h3>
 <ul>
-  <li><strong>The Issue:</strong> When a knotted protein is pulled mechanically (such as by AAA+ proteases or atomic force microscopy), the knot often tightens into a rigid "topological jam," severely arresting the unfolding process.</li>
-  <li><strong>Our Approach:</strong> Coarse-grained simulations to measure the coordinate friction of sliding knots and pinpoint the specific structural motifs that prevent catastrophic lockups.</li>
+  <li><strong>The Hurdle:</strong> When a knotted protein is pulled mechanically—either by cell machinery like AAA+ proteases or in a lab setting via atomic force microscopy—the knot often slides down the sequence and tightens into a rigid "topological jam," entirely halting the unfolding process.</li>
+  <li><strong>Proposed Roadmap:</strong> We aim to design coarse-grained simulation modules capable of measuring the exact coordinate friction of sliding knots. This toolset will help researchers pinpoint which specific structural motifs or amino acid clusters prevent catastrophic mechanical lockups.</li>
 </ul>
-
-<hr />
 
 <h2>🛠️ Methodology & Algorithmic Pipelines</h2>
 
