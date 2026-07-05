@@ -19,7 +19,7 @@
 <h1 align="center">Topological Anomalies in Protein Dynamics</h1>
 
 <p align="center">
-  <strong>A computational and analytical framework for identifying, modeling, and resolving non-trivial topological constraints (knots, slipknots, and links) in macromolecular folding and unfolding pathways.</strong>
+  <strong>An analytical and data-visualization framework for verifying, mapping, and analyzing non-trivial topological constraints (knots, slipknots, and links) in macromolecular folding and unfolding trajectories.</strong>
 </p>
 
 <hr />
@@ -29,52 +29,44 @@
   The traditional paradigm of protein folding assumes a smooth, funneled energy landscape where a linear chain of amino acids spontaneously transitions into a functional tertiary structure. However, a significant subset of the proteome contains <strong>topological constraints</strong>—such as deep physical knots, slipknots, links, and complex lasso configurations—that present immense kinetic barriers.
 </p>
 <p>
-  This project offers open-source computational tools to investigate how these complex architectures manage to fold efficiently without getting hopelessly entangled, and how they behave under mechanical stress during degradation or cellular translocation.
+  As an independent, analysis-driven research project, this repository provides tools to theoretically verify how these complex architectures fold without getting permanently tangled, map out their energy landscapes, and visualize their physical behavior under mechanical stress.
 </p>
-
-<hr />
-
-<!-- 
-  ========================================================================
-  REWRITTEN SECTION: CORE OPEN TOPOLOGICAL PROBLEMS WE AIM TO TACKLE
-  ========================================================================
--->
 
 <hr />
 
 <h2>🧩 Core Topological Hurdles We Aim to Tackle</h2>
-
 <p>
-  Unlike mathematical knots which exist strictly in closed loops, proteins are open polypeptide chains. This project is dedicated to building the algorithmic groundwork and computational tools required to confront three massive open hurdles in structural topology:
+  Unlike mathematical knots which exist strictly in closed loops, proteins are open polypeptide chains. This project builds the analytical groundwork and visualization modules required to confront three massive open hurdles in structural topology:
 </p>
 
 <h3>1. Open Knot Detection & Invariant Calculations</h3>
 <ul>
-  <li><strong>The Hurdle:</strong> Standard topological invariants (such as Alexander or Jones polynomials) completely break down on open curves. Because the chain ends are free, they can theoretically be pulled apart without changing the intrinsic "knotting" state, making classification unstable.</li>
-  <li><strong>Proposed Roadmap:</strong> We intend to implement stochastic and deterministic closure algorithms alongside <strong>Knotoid theory</strong>. Our goal is to project open chains onto a 2D plane to generate bounded topological descriptors that remain valid regardless of absolute terminus positions.</li>
+  <li><strong>The Hurdle:</strong> Standard topological invariants (such as Alexander or Jones polynomials) completely break down on open curves. Because the chain ends are free, they can theoretically be pulled apart without changing the intrinsic "knotting" state, making structural classification highly unstable.</li>
+  <li><strong>Proposed Roadmap:</strong> We implement stochastic/deterministic closure algorithms alongside <strong>Knotoid theory</strong>. Our goal is to project open chains onto a 2D plane to generate bounded topological descriptors that remain mathematically valid regardless of absolute terminus positions.</li>
 </ul>
 
 <h3>2. Kinetic Traps & Self-Entanglement Barriers</h3>
 <ul>
-  <li><strong>The Hurdle:</strong> In predictive folding simulations, polypeptide chains frequently collapse into messy local architectures. They form "false knots" or severe kinetic traps that artificial intelligence and standard physics models cannot resolve, artificially inflating the timescale of successful folding.</li>
-  <li><strong>Proposed Roadmap:</strong> We want to develop energy-landscape smoothing mechanisms coupled with biased molecular dynamics (MD) code. This will allow us to map and trace the exact, sequential threading mechanisms (such as slipknotting versus direct end-threading) needed to bypass these traps.</li>
+  <li><strong>The Hurdle:</strong> In predictive folding simulations, polypeptide chains frequently collapse into messy local architectures. They form "false knots" or severe kinetic traps that artificial intelligence and standard physics models struggle to resolve, artificially inflating the calculated timescale of successful folding.</li>
+  <li><strong>Proposed Roadmap:</strong> We develop post-processing analysis tools for biased molecular dynamics (MD) trajectories. This allows us to map and visually trace the exact, sequential threading mechanisms (such as slipknotting versus direct end-threading) needed to bypass these traps.</li>
 </ul>
 
 <h3>3. Mechanical Resistance in Unfolding Pathways</h3>
 <ul>
   <li><strong>The Hurdle:</strong> When a knotted protein is pulled mechanically—either by cell machinery like AAA+ proteases or in a lab setting via atomic force microscopy—the knot often slides down the sequence and tightens into a rigid "topological jam," entirely halting the unfolding process.</li>
-  <li><strong>Proposed Roadmap:</strong> We aim to design coarse-grained simulation modules capable of measuring the exact coordinate friction of sliding knots. This toolset will help researchers pinpoint which specific structural motifs or amino acid clusters prevent catastrophic mechanical lockups.</li>
+  <li><strong>Proposed Roadmap:</strong> We design discrete, coarse-grained polymer models capable of evaluating the coordinate friction of sliding knots. This helps isolate which specific structural motifs or amino acid clusters act as "topological brake pads."</li>
 </ul>
 
-<h2>🛠️ Methodology & Algorithmic Pipelines</h2>
+<hr />
 
-<p>The codebase is split into three modular pipelines designed to plug seamlessly into standard molecular trajectories (e.g., GROMACS, Amber, or AlphaFold PDB outputs):</p>
+<h2>🛠️ Analytical & Post-Processing Pipelines</h2>
+<p>The repository provides three modular data pipelines designed to ingest standard molecular coordinates (e.g., GROMACS trajectories, Amber outputs, or AlphaFold PDB files) and extract clean, plottable data:</p>
 
 <table width="100%">
   <thead>
     <tr>
       <th align="left">Pipeline Component</th>
-      <th align="left">Mathematical/Computational Engine</th>
+      <th align="left">Mathematical Engine</th>
       <th align="left">Primary Output Indicator</th>
     </tr>
   </thead>
@@ -90,38 +82,30 @@
       <td>Knot type classification (e.g., 3<sub>1</sub> trefoil, 4<sub>1</sub> figure-eight)</td>
     </tr>
     <tr>
-      <td><strong>Free Energy Profiler</strong></td>
-      <td>Umbrella Sampling & Steered Molecular Dynamics (SMD)</td>
+      <td><strong>Energy Profile Calculator</strong></td>
+      <td>Statistical mechanics post-processing of geometric states</td>
       <td>Topological rupture forces & tightening thresholds (pN)</td>
     </tr>
   </tbody>
 </table>
 
 <hr />
-<!-- 
-  ========================================================================
-  EXPANDED SECTION: OPEN MATHEMATICAL CHALLENGES & GETTING STARTED
-  ========================================================================
--->
 
-<hr />
-
-<h2>🎯 Open Mathematical & Computational Challenges We Seek to Solve</h2>
-
+<h2>🎯 Open Mathematical & Computational Challenges We Evaluate</h2>
 <p>
-  This repository is not just a static toolkit; it is an active research framework targeting unresolved anomalies at the intersection of knot theory, statistical mechanics, and structural biology. We welcome contributions, pull requests, and academic collaborations on the following core initiatives:
+  This repository serves as an active verification framework targeting unresolved theoretical anomalies. We welcome feedback, mathematical insights, and dataset collaborations on the following core initiatives:
 </p>
 
 <details open>
   <summary><b>🔍 Challenge A: The Evolutionary Conservation Paradox of Knotted Proteomes</b></summary>
   <br />
   <p>
-    From an evolutionary perspective, physical knots are high-risk architectures. They impose a severe <strong>kinetic penalty</strong>, radically slowing down folding rates and dramatically increasing the probability of aggregation or degradation by cellular quality-control machinery. Yet, deep knots (such as the 3<sub>1</sub> and 5<sub>2</sub> topologies) are strictly conserved across diverse phylogenetic kingdoms in vital enzymes like SPOUT-class tRNA methyltransferases.
-</p>
-  <h4>Current Directives for Contributors:</h4>
+    From an evolutionary perspective, physical knots are high-risk architectures. They impose a severe <strong>kinetic penalty</strong>, radically slowing down folding rates and increasing the probability of aggregation. Yet, deep knots are strictly conserved across diverse phylogenetic kingdoms in vital enzymes like SPOUT-class tRNA methyltransferases.
+  </p>
+  <h4>Analytical Validation Path:</h4>
   <ul>
-    <li><strong>The Stability Hypothesis:</strong> Use our <code>/modules/thermo_profile</code> library to simulate thermal, chemical (urea/guanidinium), and mechanical denaturation trajectories. We aim to quantify whether these knots act as structural "pins" that restrict global conformational fluctuations, thereby protecting active sites from denaturation under extreme physiological stress.</li>
-    <li><strong>The Entropic Bottleneck:</strong> Develop free-energy perturbation (FEP) scripts to isolate the exact entropic penalty ($-\Delta S^\ddagger$) associated with the threading transition state compared to unknotted structural analogs.</li>
+    <li><strong>The Stability Hypothesis:</strong> Use our <code>/modules/thermo_profile</code> scripts to analyze structural fluctuations across thermal, chemical, and mechanical denaturation datasets. We aim to visually quantify whether these knots act as structural "pins" that protect active sites under extreme physiological stress.</li>
+    <li><strong>The Entropic Bottleneck:</strong> Isolate the exact entropic penalty ($-\Delta S^\ddagger$) associated with the threading transition state compared to unknotted structural analogs.</li>
   </ul>
 </details>
 
@@ -129,12 +113,12 @@
   <summary><b>🔍 Challenge B: Deep Learning Bottlenecks & Differentiable Topological Invariants</b></summary>
   <br />
   <p>
-    While geometric deep learning architectures (e.g., AlphaFold 3, ESMFold) achieve remarkable global RMSD accuracy, they operate fundamentally on local spatial coordinates. Consequently, they frequently exhibit a <strong>topological blind spot</strong>: generating ground-state predictions where the backbone cleanly occupies the correct 3D volume, but the pathway leading there requires non-physical chain self-intersections or features unthreaded slipknots that break physical folding trajectories.
+    While geometric deep learning architectures (e.g., AlphaFold 3, ESMFold) achieve remarkable global coordinate accuracy, they operate fundamentally on local spatial positions. Consequently, they frequently exhibit a <strong>topological blind spot</strong>: generating predictions where the backbone occupies the correct 3D volume, but the pathway leading there requires non-physical chain self-intersections or features unthreaded slipknots.
   </p>
-  <h4>Current Directives for Contributors:</h4>
+  <h4>Analytical Validation Path:</h4>
   <ul>
-    <li><strong>Persistent Homology Loss Functions:</strong> We are looking for contributors to help engineer a custom, fully differentiable PyTorch/JAX loss function utilizing 0-dimensional and 1-dimensional persistence diagrams. By tracking the birth and death of topological features during model training, we can penalize structural invalidity before coordinate refinement.</li>
-    <li><strong>Knotoid Distance Metrics:</strong> Implement a generalized metric to evaluate the distance between predicted and experimental open-chain topologies without relying on arbitrary, artifact-inducing endpoint closures.</li>
+    <li><strong>Persistent Homology Mapping:</strong> We analyze structural invalidity by tracking the birth and death of topological features across 0-dimensional and 1-dimensional persistence diagrams during simulated folding steps.</li>
+    <li><strong>Knotoid Distance Metrics:</strong> Implement and plot a generalized metric to evaluate the distance between predicted and experimental open-chain topologies without relying on artifact-inducing endpoint closures.</li>
   </ul>
 </details>
 
@@ -142,33 +126,19 @@
   <summary><b>🔍 Challenge C: The Topological Jamming Threshold (Mechanical Unfolding)</b></summary>
   <br />
   <p>
-    When a knotted protein is processed by a directional ATP-dependent cellular protease (like ClpXP), it is pulled sequentially from one terminus through a narrow pore. This pulling action frequently causes the open knot to slide along the sequence, eventually compressing into a tight "topological jam" or macroscopic friction lock.
+    When a knotted protein is processed by a directional ATP-dependent cellular protease, it is pulled sequentially from one terminus through a narrow pore. This pulling action frequently causes the open knot to slide along the sequence, eventually compressing into a tight "topological jam" or macroscopic friction lock.
   </p>
-  <h4>Current Directives for Contributors:</h4>
+  <h4>Analytical Validation Path:</h4>
   <ul>
-    <li>Help optimize our coarse-grained Master Equation models to predict the exact amino acid sequences that act as "slip-planes" versus those that trigger catastrophic mechanical arrest under simulated steering forces ($>150\text{ pN}$).</li>
+    <li>Optimize our coarse-grained Master Equation models to predict the exact amino acid sequences that act as "slip-planes" versus those that trigger catastrophic mechanical arrest under simulated steering forces (>150 pN).</li>
   </ul>
 </details>
 
 <hr />
 
-<hr />
-<!-- 
-  ========================================================================
-  NEW SECTION: THEORETICAL ANALYSIS & PLOTTING DIRECTIONS
-  ========================================================================
--->
-
-<hr />
-
 <h2>📈 Research Roadmap: Theoretical Verification & Plotting Frameworks</h2>
-
 <p>
-  As an independent research initiative, this project prioritizes <strong>analytical verification, mathematical validation, and rigorous data visualization</strong> over heavy software deployment. We leverage open-source structural datasets (PDB/AlphaFold DB) to map out topological mechanics using geometric analysis and Python plotting pipelines (matplotlib, seaborn, and plotly).
-</p>
-
-<p>
-  Our analytical roadmap focuses on three distinct theoretical directions:
+  This project prioritizes <strong>analytical verification, mathematical validation, and rigorous data visualization</strong>. We leverage open-source structural datasets to map out topological mechanics using geometric analysis and Python plotting pipelines (matplotlib, seaborn, and plotly).
 </p>
 
 <h3>1. Benchmarking Structural AI & Topological Discontinuity Mapping</h3>
@@ -178,12 +148,7 @@
 </p>
 <ul>
   <li><strong>The Goal:</strong> Mathematically quantify the "topological blind spot" of geometric deep learning models by identifying where coordinate predictions look structurally sound but contain non-physical backbone self-intersections.</li>
-  <li><strong>Analysis &amp; Plotting Pipeline:</strong>
-    <ul>
-      <li>Parse and calculate <i>Knotoid</i> invariants across PDB native structures vs. AlphaFold 3 predictions.</li>
-      <li>Generate <strong>Topological Discrepancy Heatmaps</strong> mapping sequence position against delta invariants, highlighting exactly which structural domains confuse deep learning backbones.</li>
-    </ul>
-  </li>
+  <li><strong>Pipeline:</strong> Parse and calculate <i>Knotoid</i> invariants across PDB native structures vs. AlphaFold 3 predictions. Generate <strong>Topological Discrepancy Heatmaps</strong> mapping sequence position against delta invariants, highlighting exactly which structural domains confuse deep learning backbones.</li>
 </ul>
 
 <h3>2. Analytical Validation of Topological Collective Variables (CVs)</h3>
@@ -192,13 +157,8 @@
   <img src="https://img.shields.io/badge/Outputs-Free%20Energy%20Landscapes-blue?style=flat-square" alt="Outputs: Energy Landscapes">
 </p>
 <ul>
-  <li><strong>The Goal:</strong> Test and verify novel mathematical descriptors (like real-time Gauss linking integrals and writhe profiles) to see if they can accurately serve as low-dimensional coordinates for tracking macro-molecular entanglement.</li>
-  <li><strong>Analysis &amp; Plotting Pipeline:</strong>
-    <ul>
-      <li>Extract existing coarse-grained molecular dynamics trajectories to calculate how these new descriptors evolve relative to classical variables (e.g., Radius of Gyration, $R_g$).</li>
-      <li>Plot <strong>2D Free Energy Landscapes</strong> ($F(s)$) to verify whether the proposed CV can cleanly distinguish between unthreaded, slipknotted, and fully knotted states without overlapping states.</li>
-    </ul>
-  </li>
+  <li><strong>The Goal:</strong> Test and verify novel mathematical descriptors (like real-time Gauss linking integrals and writhe profiles) to see if they can accurately serve as low-dimensional coordinates for tracking macromolecular entanglement.</li>
+  <li><strong>Pipeline:</strong> Extract existing trajectories to calculate how these new descriptors evolve relative to classical variables (like Radius of Gyration). Plot <strong>2D Free Energy Landscapes</strong> ($F(s)$) to verify whether the proposed CV can cleanly isolate unthreaded, slipknotted, and fully knotted states.</li>
 </ul>
 
 <h3>3. Coarse-Grained Mathematical Modeling of Knot Jamming</h3>
@@ -208,19 +168,14 @@
 </p>
 <ul>
   <li><strong>The Goal:</strong> Model the physical tightening behavior of an open knot moving down a polypeptide chain under mechanical tension, pinpointing the kinetic conditions that cause a knot to lock up.</li>
-  <li><strong>Analysis &amp; Plotting Pipeline:</strong>
-    <ul>
-      <li>Build simplified discrete 1D polymer string models where each amino acid bead is assigned an empirical friction coefficient based on its side-chain volume and hydrophobicity.</li>
-      <li>Plot <strong>Force vs. Knot Diameter Profiles</strong> and <strong>Tightening Threshold Curves</strong> to map how pulling velocities affect the mechanical arrest point of the knot.</li>
-    </ul>
-  </li>
+  <li><strong>Pipeline:</strong> Build simplified discrete 1D polymer string models where each amino acid bead is assigned an empirical friction coefficient based on its side-chain volume. Plot <strong>Force vs. Knot Diameter Profiles</strong> and <strong>Tightening Threshold Curves</strong> to map how pulling velocities affect the mechanical arrest point of the knot.</li>
 </ul>
 
 <hr />
 
 <h2>📊 Planned Visualization Deliverables</h2>
 <p>
-  Every module in this repository is designed to be self-contained, reading standardized coordinate formats and outputting publication-ready vector graphics (<code>.svg</code>/<code>.pdf</code>). We aim to provide clear visual proof of:
+  Every module in this repository is designed to be self-contained, reading standardized coordinate formats and outputting publication-ready vector graphics (<code>.svg</code>/<code>.pdf</code>):
 </p>
 
 <table width="100%">
@@ -249,11 +204,14 @@
     </tr>
   </tbody>
 </table>
+
+<hr />
+
 <h2>🚀 Getting Started</h2>
 
 <h3>📋 Prerequisites & System Dependencies</h3>
 <p>
-  The underlying topology engine relies on highly optimized C++ extensions to calculate polynomial invariants (such as the Alexander-Conway and Jones polynomials) across massive molecular dynamics trajectories. Because these calculations require arbitrary-precision arithmetic to avoid floating-point overflow during matrix determinants, you must install the following native libraries before building the Python extensions:
+  The underlying topology engine relies on highly optimized C++ extensions to calculate polynomial invariants across massive molecular trajectories. Because these calculations require arbitrary-precision arithmetic to avoid floating-point overflow during matrix determinants, you must install the following native libraries before building the Python extensions:
 </p>
 
 <h4>For Ubuntu/Debian Linux:</h4>
@@ -266,7 +224,7 @@ sudo apt-get install -y build-essential libgmp-dev libmpfr-dev python3-dev</code
 
 <h3>💻 Installation & Environment Setup</h3>
 <p>
-  We highly recommend isolating your installation within a virtual environment (conda or venv) to prevent dependency conflicts with existing geometric or structural biology packages.
+  We highly recommend isolating your installation within a virtual environment to prevent dependency conflicts with existing geometric or structural biology packages.
 </p>
 
 <pre><code># 1. Clone the repository and navigate to the project root
@@ -289,3 +247,11 @@ pip install -r requirements.txt</code></pre>
 </p>
 <pre><code># Runs a calculation on a pre-packaged PDB trajectory of a knotted methyltransferase (PDB ID: 1WNZ)
 python -m unittest tests/test_knot_detection.py</code></pre>
+
+<hr />
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Maintained%20By-Computational%20Biophysics%20Community-darkgreen?style=flat-square" alt="Community Maintainer Block">
+  <br />
+  <sub>For coordinate dataset submissions or visual analysis feature requests, please open a formal issue on our <strong><a href="https://github.com/your-username/your-repo-name/issues">Issue Tracker</a></strong>. For sensitive or collaborative academic inquiries, please consult our <code>COLLABORATION.md</code> document.</sub>
+</p>
