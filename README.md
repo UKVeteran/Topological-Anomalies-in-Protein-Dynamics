@@ -248,10 +248,4 @@ pip install -r requirements.txt</code></pre>
 <pre><code># Runs a calculation on a pre-packaged PDB trajectory of a knotted methyltransferase (PDB ID: 1WNZ)
 python -m unittest tests/test_knot_detection.py</code></pre>
 
-<hr />
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Maintained%20By-Computational%20Biophysics%20Community-darkgreen?style=flat-square" alt="Community Maintainer Block">
-  <br />
-  <sub>For coordinate dataset submissions or visual analysis feature requests, please open a formal issue on our <strong><a href="https://github.com/your-username/your-repo-name/issues">Issue Tracker</a></strong>. For sensitive or collaborative academic inquiries, please consult our <code>COLLABORATION.md</code> document.</sub>
-</p>
