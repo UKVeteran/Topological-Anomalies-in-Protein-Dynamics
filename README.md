@@ -194,4 +194,99 @@ pip install -r requirements.txt</code></pre>
 python -m unittest tests/test_knot_detection.py</code></pre>
 
 <hr />
+<!-- 
+  ========================================================================
+  NEW SECTION: THEORETICAL ANALYSIS & PLOTTING DIRECTIONS
+  ========================================================================
+-->
 
+<hr />
+
+<h2>📈 Research Roadmap: Theoretical Verification & Plotting Frameworks</h2>
+
+<p>
+  As an independent research initiative, this project prioritizes <strong>analytical verification, mathematical validation, and rigorous data visualization</strong> over heavy software deployment. We leverage open-source structural datasets (PDB/AlphaFold DB) to map out topological mechanics using geometric analysis and Python plotting pipelines (matplotlib, seaborn, and plotly).
+</p>
+
+<p>
+  Our analytical roadmap focuses on three distinct theoretical directions:
+</p>
+
+<h3>1. Benchmarking Structural AI & Topological Discontinuity Mapping</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/Focus-AI%20Validation-orange?style=flat-square" alt="Focus: AI Validation">
+  <img src="https://img.shields.io/badge/Outputs-Scatter%20Plots%20%7C%20Heatmaps-blue?style=flat-square" alt="Outputs: Plots">
+</p>
+<ul>
+  <li><strong>The Goal:</strong> Mathematically quantify the "topological blind spot" of geometric deep learning models by identifying where coordinate predictions look structurally sound but contain non-physical backbone self-intersections.</li>
+  <li><strong>Analysis &amp; Plotting Pipeline:</strong>
+    <ul>
+      <li>Parse and calculate <i>Knotoid</i> invariants across PDB native structures vs. AlphaFold 3 predictions.</li>
+      <li>Generate <strong>Topological Discrepancy Heatmaps</strong> mapping sequence position against delta invariants, highlighting exactly which structural domains confuse deep learning backbones.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>2. Analytical Validation of Topological Collective Variables (CVs)</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/Focus-Statistical%20Mechanics-brightgreen?style=flat-square" alt="Focus: Stat Mech">
+  <img src="https://img.shields.io/badge/Outputs-Free%20Energy%20Landscapes-blue?style=flat-square" alt="Outputs: Energy Landscapes">
+</p>
+<ul>
+  <li><strong>The Goal:</strong> Test and verify novel mathematical descriptors (like real-time Gauss linking integrals and writhe profiles) to see if they can accurately serve as low-dimensional coordinates for tracking macro-molecular entanglement.</li>
+  <li><strong>Analysis &amp; Plotting Pipeline:</strong>
+    <ul>
+      <li>Extract existing coarse-grained molecular dynamics trajectories to calculate how these new descriptors evolve relative to classical variables (e.g., Radius of Gyration, $R_g$).</li>
+      <li>Plot <strong>2D Free Energy Landscapes</strong> ($F(s)$) to verify whether the proposed CV can cleanly distinguish between unthreaded, slipknotted, and fully knotted states without overlapping states.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>3. Coarse-Grained Mathematical Modeling of Knot Jamming</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/Focus-Mechanical%20Friction-red?style=flat-square" alt="Focus: Friction">
+  <img src="https://img.shields.io/badge/Outputs-Force%20vs%20Displacement%20Curves-blue?style=flat-square" alt="Outputs: Force Curves">
+</p>
+<ul>
+  <li><strong>The Goal:</strong> Model the physical tightening behavior of an open knot moving down a polypeptide chain under mechanical tension, pinpointing the kinetic conditions that cause a knot to lock up.</li>
+  <li><strong>Analysis &amp; Plotting Pipeline:</strong>
+    <ul>
+      <li>Build simplified discrete 1D polymer string models where each amino acid bead is assigned an empirical friction coefficient based on its side-chain volume and hydrophobicity.</li>
+      <li>Plot <strong>Force vs. Knot Diameter Profiles</strong> and <strong>Tightening Threshold Curves</strong> to map how pulling velocities affect the mechanical arrest point of the knot.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2>📊 Planned Visualization Deliverables</h2>
+<p>
+  Every module in this repository is designed to be self-contained, reading standardized coordinate formats and outputting publication-ready vector graphics (<code>.svg</code>/<code>.pdf</code>). We aim to provide clear visual proof of:
+</p>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th align="left">Analysis Target</th>
+      <th align="left">Plot Architecture</th>
+      <th align="left">Insight Communicated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Knot Fingerprinting</strong></td>
+      <td>Matrix Contour Plots</td>
+      <td>Locates the exact boundaries of the knotted core within a 500+ residue sequence.</td>
+    </tr>
+    <tr>
+      <td><strong>Landscape Roughness</strong></td>
+      <td>1D/2D Energy Profiles</td>
+      <td>Visualizes the height of the free energy barrier ($\Delta G^\ddagger$) keeping a protein trapped in an entangled state.</td>
+    </tr>
+    <tr>
+      <td><strong>Friction Profiles</strong></td>
+      <td>Sequence Position vs. pN Resistance</td>
+      <td>Identifies specific bulky residues (e.g., W, F, Y) acting as "topological brake pads" during forced unfolding.</td>
+    </tr>
+  </tbody>
+</table>
