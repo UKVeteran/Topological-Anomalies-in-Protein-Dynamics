@@ -152,47 +152,6 @@
 
 <hr />
 
-<h2>🚀 Getting Started</h2>
-
-<h3>📋 Prerequisites & System Dependencies</h3>
-<p>
-  The underlying topology engine relies on highly optimized C++ extensions to calculate polynomial invariants (such as the Alexander-Conway and Jones polynomials) across massive molecular dynamics trajectories. Because these calculations require arbitrary-precision arithmetic to avoid floating-point overflow during matrix determinants, you must install the following native libraries before building the Python extensions:
-</p>
-
-<h4>For Ubuntu/Debian Linux:</h4>
-<pre><code># Install GNU Multiple Precision Arithmetic (GMP) and Multiple Precision Floating-Point Reliable (MPFR) libraries
-sudo apt-get update
-sudo apt-get install -y build-essential libgmp-dev libmpfr-dev python3-dev</code></pre>
-
-<h4>For macOS (via Homebrew):</h4>
-<pre><code>brew install gmp mpfr python</code></pre>
-
-<h3>💻 Installation & Environment Setup</h3>
-<p>
-  We highly recommend isolating your installation within a virtual environment (conda or venv) to prevent dependency conflicts with existing geometric or structural biology packages.
-</p>
-
-<pre><code># 1. Clone the repository and navigate to the project root
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-
-# 2. Create and activate an isolated virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-
-# 3. Upgrade core packaging tools
-pip install --upgrade pip setuptools wheel
-
-# 4. Install dependencies (this will automatically compile the C++ topological extensions)
-pip install -r requirements.txt</code></pre>
-
-<h3>🧪 Quick Verification Run</h3>
-<p>
-  To verify that the C++ mathematical extensions are properly compiled and communicating with the geometric reduction pipeline, execute our baseline topological profiling test suite:
-</p>
-<pre><code># Runs a calculation on a pre-packaged PDB trajectory of a knotted methyltransferase (PDB ID: 1WNZ)
-python -m unittest tests/test_knot_detection.py</code></pre>
-
 <hr />
 <!-- 
   ========================================================================
@@ -290,3 +249,43 @@ python -m unittest tests/test_knot_detection.py</code></pre>
     </tr>
   </tbody>
 </table>
+<h2>🚀 Getting Started</h2>
+
+<h3>📋 Prerequisites & System Dependencies</h3>
+<p>
+  The underlying topology engine relies on highly optimized C++ extensions to calculate polynomial invariants (such as the Alexander-Conway and Jones polynomials) across massive molecular dynamics trajectories. Because these calculations require arbitrary-precision arithmetic to avoid floating-point overflow during matrix determinants, you must install the following native libraries before building the Python extensions:
+</p>
+
+<h4>For Ubuntu/Debian Linux:</h4>
+<pre><code># Install GNU Multiple Precision Arithmetic (GMP) and Multiple Precision Floating-Point Reliable (MPFR) libraries
+sudo apt-get update
+sudo apt-get install -y build-essential libgmp-dev libmpfr-dev python3-dev</code></pre>
+
+<h4>For macOS (via Homebrew):</h4>
+<pre><code>brew install gmp mpfr python</code></pre>
+
+<h3>💻 Installation & Environment Setup</h3>
+<p>
+  We highly recommend isolating your installation within a virtual environment (conda or venv) to prevent dependency conflicts with existing geometric or structural biology packages.
+</p>
+
+<pre><code># 1. Clone the repository and navigate to the project root
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
+# 2. Create and activate an isolated virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# 3. Upgrade core packaging tools
+pip install --upgrade pip setuptools wheel
+
+# 4. Install dependencies (this will automatically compile the C++ topological extensions)
+pip install -r requirements.txt</code></pre>
+
+<h3>🧪 Quick Verification Run</h3>
+<p>
+  To verify that the C++ mathematical extensions are properly compiled and communicating with the geometric reduction pipeline, execute our baseline topological profiling test suite:
+</p>
+<pre><code># Runs a calculation on a pre-packaged PDB trajectory of a knotted methyltransferase (PDB ID: 1WNZ)
+python -m unittest tests/test_knot_detection.py</code></pre>
