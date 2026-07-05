@@ -92,39 +92,105 @@
 </table>
 
 <hr />
+<!-- 
+  ========================================================================
+  EXPANDED SECTION: OPEN MATHEMATICAL CHALLENGES & GETTING STARTED
+  ========================================================================
+-->
 
-<h2>🎯 Open Mathematical Challenges We Seek to Solve</h2>
+<hr />
 
-<details>
-  <summary><b>🔍 Challenge A: The Conservation Paradox of Knotted Proteins</b></summary>
+<h2>🎯 Open Mathematical & Computational Challenges We Seek to Solve</h2>
+
+<p>
+  This repository is not just a static toolkit; it is an active research framework targeting unresolved anomalies at the intersection of knot theory, statistical mechanics, and structural biology. We welcome contributions, pull requests, and academic collaborations on the following core initiatives:
+</p>
+
+<details open>
+  <summary><b>🔍 Challenge A: The Evolutionary Conservation Paradox of Knotted Proteomes</b></summary>
+  <br />
   <p>
-    Why has evolution actively conserved deep knots in vital enzymes (like tRNA methyltransferases) despite the heavy kinetic penalty of folding them? Use our profiling modules to explore the hypothesis of increased thermal and chemical stability.
+    From an evolutionary perspective, physical knots are high-risk architectures. They impose a severe <strong>kinetic penalty</strong>, radically slowing down folding rates and dramatically increasing the probability of aggregation or degradation by cellular quality-control machinery. Yet, deep knots (such as the 3<sub>1</sub> and 5<sub>2</sub> topologies) are strictly conserved across diverse phylogenetic kingdoms in vital enzymes like SPOUT-class tRNA methyltransferases.
+</p>
+  <h4>Current Directives for Contributors:</h4>
+  <ul>
+    <li><strong>The Stability Hypothesis:</strong> Use our <code>/modules/thermo_profile</code> library to simulate thermal, chemical (urea/guanidinium), and mechanical denaturation trajectories. We aim to quantify whether these knots act as structural "pins" that restrict global conformational fluctuations, thereby protecting active sites from denaturation under extreme physiological stress.</li>
+    <li><strong>The Entropic Bottleneck:</strong> Develop free-energy perturbation (FEP) scripts to isolate the exact entropic penalty ($-\Delta S^\ddagger$) associated with the threading transition state compared to unknotted structural analogs.</li>
+  </ul>
+</details>
+
+<details open>
+  <summary><b>🔍 Challenge B: Deep Learning Bottlenecks & Differentiable Topological Invariants</b></summary>
+  <br />
+  <p>
+    While geometric deep learning architectures (e.g., AlphaFold 3, ESMFold) achieve remarkable global RMSD accuracy, they operate fundamentally on local spatial coordinates. Consequently, they frequently exhibit a <strong>topological blind spot</strong>: generating ground-state predictions where the backbone cleanly occupies the correct 3D volume, but the pathway leading there requires non-physical chain self-intersections or features unthreaded slipknots that break physical folding trajectories.
   </p>
+  <h4>Current Directives for Contributors:</h4>
+  <ul>
+    <li><strong>Persistent Homology Loss Functions:</strong> We are looking for contributors to help engineer a custom, fully differentiable PyTorch/JAX loss function utilizing 0-dimensional and 1-dimensional persistence diagrams. By tracking the birth and death of topological features during model training, we can penalize structural invalidity before coordinate refinement.</li>
+    <li><strong>Knotoid Distance Metrics:</strong> Implement a generalized metric to evaluate the distance between predicted and experimental open-chain topologies without relying on arbitrary, artifact-inducing endpoint closures.</li>
+  </ul>
 </details>
 
 <details>
-  <summary><b>🔍 Challenge B: Deep Learning and Topological Invariants</b></summary>
+  <summary><b>🔍 Challenge C: The Topological Jamming Threshold (Mechanical Unfolding)</b></summary>
+  <br />
   <p>
-    Current structural prediction models often struggle with the precise threading sequence required to generate physical knots. We are looking for contributors to help build a custom loss function based on <i>persistent homology</i> to penalize topologically incorrect self-intersections.
+    When a knotted protein is processed by a directional ATP-dependent cellular protease (like ClpXP), it is pulled sequentially from one terminus through a narrow pore. This pulling action frequently causes the open knot to slide along the sequence, eventually compressing into a tight "topological jam" or macroscopic friction lock.
   </p>
+  <h4>Current Directives for Contributors:</h4>
+  <ul>
+    <li>Help optimize our coarse-grained Master Equation models to predict the exact amino acid sequences that act as "slip-planes" versus those that trigger catastrophic mechanical arrest under simulated steering forces ($>150\text{ pN}$).</li>
+  </ul>
 </details>
 
 <hr />
 
 <h2>🚀 Getting Started</h2>
 
-<h3>Prerequisites</h3>
-<p>Ensure you have the following system libraries installed before running the geometric reduction code:</p>
-<pre><code># For calculating polynomial invariants efficiently via C++ extensions
-sudo apt-get install libgmp-dev libmpfr-dev</code></pre>
+<h3>📋 Prerequisites & System Dependencies</h3>
+<p>
+  The underlying topology engine relies on highly optimized C++ extensions to calculate polynomial invariants (such as the Alexander-Conway and Jones polynomials) across massive molecular dynamics trajectories. Because these calculations require arbitrary-precision arithmetic to avoid floating-point overflow during matrix determinants, you must install the following native libraries before building the Python extensions:
+</p>
 
-<h3>Installation</h3>
-<pre><code>git clone https://github.com/your-username/your-repo-name.git
+<h4>For Ubuntu/Debian Linux:</h4>
+<pre><code># Install GNU Multiple Precision Arithmetic (GMP) and Multiple Precision Floating-Point Reliable (MPFR) libraries
+sudo apt-get update
+sudo apt-get install -y build-essential libgmp-dev libmpfr-dev python3-dev</code></pre>
+
+<h4>For macOS (via Homebrew):</h4>
+<pre><code>brew install gmp mpfr python</code></pre>
+
+<h3>💻 Installation & Environment Setup</h3>
+<p>
+  We highly recommend isolating your installation within a virtual environment (conda or venv) to prevent dependency conflicts with existing geometric or structural biology packages.
+</p>
+
+<pre><code># 1. Clone the repository and navigate to the project root
+git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
+
+# 2. Create and activate an isolated virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# 3. Upgrade core packaging tools
+pip install --upgrade pip setuptools wheel
+
+# 4. Install dependencies (this will automatically compile the C++ topological extensions)
 pip install -r requirements.txt</code></pre>
+
+<h3>🧪 Quick Verification Run</h3>
+<p>
+  To verify that the C++ mathematical extensions are properly compiled and communicating with the geometric reduction pipeline, execute our baseline topological profiling test suite:
+</p>
+<pre><code># Runs a calculation on a pre-packaged PDB trajectory of a knotted methyltransferase (PDB ID: 1WNZ)
+python -m unittest tests/test_knot_detection.py</code></pre>
 
 <hr />
 
 <p align="center">
-  <sub>Maintained by the Computational Biophysics Community • For inquiries or collaboration, please open an Issue.</sub>
+  <img src="https://img.shields.io/badge/Maintained%20By-Computational%20Biophysics%20Community-darkgreen?style=flat-square" alt="Community Maintainer Block">
+  <br />
+  <sub>For computational bugs, architectural feature requests, or to submit novel coordinate datasets, please open a formal issue on our <strong><a href="https://github.com/your-username/your-repo-name/issues">Issue Tracker</a></strong>. For sensitive or collaborative academic inquiries, please consult our <code>COLLABORATION.md</code> document.</sub>
 </p>
